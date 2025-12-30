@@ -1,5 +1,6 @@
 import "./globals.css";
 import NavMenu from "@/app/NavMenu";
+import AuthProvider from "./AuthProvider";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 
@@ -16,11 +17,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={myFont.className}>
-                <NavMenu />
-                {children}
-            </body>
-        </html>
+        <AuthProvider>
+            <html lang="en">
+                <body className={myFont.className}>
+                    <NavMenu />
+                    {children}
+                </body>
+            </html>
+        </AuthProvider>
     );
 }
