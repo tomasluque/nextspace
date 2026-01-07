@@ -2,7 +2,6 @@ import { getServerSession } from "next-auth";
 import { prisma } from "@/lib/prisma";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
-// import { ProfileForm } from "./ProfileForm";
 import { SignOutButton } from "@/components/buttons";
 import { updateUser } from "./actions";
 
@@ -24,7 +23,6 @@ export default async function Dashboard() {
         <>
             <h1>Dashboard</h1>
             <SignOutButton />
-            {/* <ProfileForm user={user} /> */}
             <div>
                 <h2>Edit Your Profile</h2>
                 <form action={updateUser}>
