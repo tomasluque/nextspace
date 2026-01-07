@@ -16,8 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function UserProfile({ params }: Props) {
     params = await params;
-    const user = await prisma.user.findUnique({ where: { id: params.id } });
-    const { name, bio, image, id } = user ?? {};
+    const user = await prisma.user.findUnique({
+        where: { id: params.id },
+        include: { following: true, followedBy: true },
+    });
+
+    const { name, bio, image, id, following, followedBy } = user ?? {};
 
     return (
         <div>
@@ -25,6 +29,10 @@ export default async function UserProfile({ params }: Props) {
             <img width={300} src={image ?? "/mememan.webp"} alt={`${name}'s profile`} />
             <h3>Bio</h3>
             <p>{bio ?? "..."}</p>
+
+            <h3>Friends</h3>
+            <p>Following: {following?.length}</p>
+            <p>Followers: {followedBy?.length}</p>
 
             <FollowButton targetUserId={params.id} />
         </div>
