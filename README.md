@@ -19,3 +19,9 @@ Rename the `.env.example` file to `.env` and update env variables. This project 
 -   Both server and client components
 -   Advanced data fetching & updating (w/ loading pages & optimistic updates)
 -   Advanced data mutability with server actions
+
+
+## Screenshots
+![alt text](https://github.com/tomasluque/nextspace/blob/main/scr1.png)
+![alt text](https://github.com/tomasluque/nextspace/blob/main/scr2.png)
+![alt text](https://github.com/tomasluque/nextspace/blob/main/scr3.png)
