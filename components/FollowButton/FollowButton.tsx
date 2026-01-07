@@ -2,6 +2,7 @@ import { getServerSession } from "next-auth";
 import FollowClient from "./FollowClient";
 import { prisma } from "@/lib/prisma";
 import { authOptions } from "../../app/api/auth/[...nextauth]/route";
+import { FollowUser, UnfollowUser } from "./actions";
 
 interface Props {
     targetUserId: string;
