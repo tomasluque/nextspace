@@ -10,5 +10,12 @@ cd nextspace
 npm install
 ```
 
-Rename the `.env.example` file to `.env` and update env variables.
-(I am using a free [NeonDB](https://neon.tech) Postgres database, but any Prisma compatible DB will work.)
+Rename the `.env.example` file to `.env` and update env variables. This project use Prisma ORM - once the env variables are updated, run a Prisma migration. (I am using a free [NeonDB](https://neon.tech) Postgres database, but any Prisma compatible DB will work.)
+
+## Features
+
+-   Multiple seamless auth methods (w/ Auth.js)
+-   Dynamic route data
+-   Both server and client components
+-   Advanced data fetching & updating (w/ loading pages & optimistic updates)
+-   Advanced data mutability with server actions
